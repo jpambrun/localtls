@@ -155,7 +155,7 @@ class Resolver(ProxyResolver):
             logger.info("requestx: %s, %s", labelstr, confs.ONLY_PRIVATE_IPS)
 
             subdomains = labelstr.split('.')
-            if len(subdomains) == 4: # TODO: dynamic
+            if len(subdomains) >= 4:
                 ip = None
                 try:
                     ip = ipaddress.ip_address(subdomains[0].replace('-', '.'))
